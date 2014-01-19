@@ -1,0 +1,4 @@
+vim-dot
+=======
+
+vimrc file
