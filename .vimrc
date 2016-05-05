@@ -10,25 +10,30 @@ set mouse=a
 set autoread "automatically read the file again when it is changed outside
 set shortmess+=A "don't give the ATTENTION message when an existing swap file is found.
 set autoindent
+syntax on
 
 "set swap-file dir
 set dir=~/.vim/tmp
 
-set t_Co=256
+"set t_Co=256
+set encoding=utf-8 " Necessary to show Unicode glyphs
 "let g:CSApprox_konsole = 1
 
+execute pathogen#infect()
 "COLORS
 "colo desert
 "colo wombat256mod
-color railscasts
+syntax enable             " Enable syntax highlighting
+set background= "dark | light"
+colorscheme solarized
 
-highlight ExtraWhitespaces ctermbg=red guibg=red
-match ExtraWhitespaces /\s\+$\| \+\ze\t/
-
+set laststatus=2 "show statusline all the time
+let g:airline_powerline_fonts = 1
+let g:solarized_termcolors=256
 " init pathogen on ~/.vim/bundle
-execute pathogen#infect()
 
-syntax on             " Enable syntax highlighting
+syntax on
+
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
@@ -51,6 +56,9 @@ let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 "let ruby_fold = 1
+highlight ExtraWhitespaces ctermbg=red guibg=red
+match ExtraWhitespaces /\s\+$\| \+\ze\t/
 
 " inoremap <Nul> <C-X><C-O> " omni completion shortuct map to C-Space
 "autocmd VimEnter * wincmd p " automaticaly focused pointer to nerd tree
+
